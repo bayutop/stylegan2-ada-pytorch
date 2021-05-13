@@ -57,7 +57,7 @@ def project(
     noise_bufs = { name: buf for (name, buf) in G.synthesis.named_buffers() if 'noise_const' in name }
 
     # Load VGG16 feature detector.
-    f='/content/drive/Shareddrives/virtual/PKL/vgg16.pkl'
+    f='/content/drive/Shareddrives/virtual/PKL/vgg16.pt'
     vgg16 = torch.jit.load(f).eval().to(device)
 
     # Features for target image.
