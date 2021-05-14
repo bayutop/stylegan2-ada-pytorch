@@ -196,7 +196,7 @@ def run_projection(
             synth_image = synth_image.permute(0, 2, 3, 1).clamp(0, 255).to(torch.uint8)[0].cpu().numpy()
             i +=1
             PIL.Image.fromarray(synth_image, 'RGB').save(f'projection_animation/{i+1}.png')
-            video.append_data(np.concatenate([target_uint8, synth_image], axis=1))
+            video.append_data(synth_image)
         video.close()
 
     # Save final projected frame and W vector.
